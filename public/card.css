@@ -1,0 +1,362 @@
+ /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* Wrapper and Slider Styles */
+        .wrapper {
+            height: 100vh;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* First Slide Styles */
+        .bg {
+            background: 
+    radial-gradient(circle at 10% 20%, 
+      rgba(253, 190, 32, 0.8) 0%, 
+      rgba(255, 105, 0, 0.5) 20%,
+      transparent 50%),
+    radial-gradient(circle at 90% 80%, 
+      rgba(255, 230, 69, 0.7) 0%, 
+      rgba(200, 80, 192, 0.4) 30%,
+      transparent 60%),
+    radial-gradient(circle at 30% 60%, 
+      rgba(0, 199, 219, 0.4) 0%, 
+      transparent 40%),
+    linear-gradient(135deg,
+      #FDBE20 0%,
+      #FF8C00 25%,
+      #FFE645 50%,
+      #FF1493 75%,
+      #00C7DB 100%);
+        background-blend-mode: overlay, screen, normal, normal;
+        animation: gradientShift 15s ease infinite alternate;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        }
+
+
+                    @keyframes gradientShift {
+            0% {
+                background-position: 0% 0%;
+            }
+            25% {
+                background-position: 100% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+            }
+
+        /* Firework Explosion Effect */
+        .pyro {
+            position: absolute;
+            top: 50%;
+            width: 33%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .pyro.left {
+            left: 0;
+            transform: translate(0, -50%);
+        }
+
+        .pyro.center {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pyro.right {
+            right: 0;
+            transform: translate(0, -50%);
+        }
+
+        .pyro > .before, .pyro > .after {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+            animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+        }
+
+        .pyro.left > .before, 
+        .pyro.left > .after {
+            animation-delay: 0s, 0s, 0s;
+        }
+
+        .pyro.center > .before, 
+        .pyro.center > .after {
+            animation-delay: 0.4s, 0.4s, 0.4s;
+        }
+
+        .pyro.right > .before, 
+        .pyro.right > .after {
+            animation-delay: 0.8s, 0.8s, 0.8s;
+        }
+
+        .pyro > .after {
+            animation-delay: 1.25s, 1.25s, 1.25s;
+            animation-duration: 1.25s, 1.25s, 6.25s;
+        }
+
+        @keyframes bang {
+            to {
+                box-shadow: -236px 202px #ef8d22, 57px -25px #feff28, 4px 208px #2bd8ff, -110px -165px #fc85e1, -227px -94px #ef8d22, -62px 161px #feff28, -172px -120px #2bd8ff, -146px -170px #fc85e1, 204px 35px #ef8d22, -197px -183px #feff28, -141px 144px #2bd8ff, 175px -145px #fc85e1, -6px -110px #ef8d22, -247px -26px #feff28, 119px -100px #2bd8ff, 189px 100px #fc85e1, 8px -211px #ef8d22, -171px 100px #feff28, 55px -162px #2bd8ff, -153px 76px #fc85e1, 101px 98px #ef8d22, 18px -94px #feff28, 207px -35px #2bd8ff, -22px 230px #fc85e1, -82px -140px #ef8d22, -96px 126px #feff28, -108px -226px #2bd8ff, -2px -102px #fc85e1, 5px -140px #ef8d22, 66px 125px #feff28, 102px -180px #2bd8ff, -87px 233px #fc85e1, 60px -11px #ef8d22, 183px -131px #feff28, -118px 145px #2bd8ff, -106px 47px #fc85e1, 136px -39px #ef8d22, -39px 191px #feff28, -99px -144px #2bd8ff, 113px -29px #fc85e1, 114px 209px #ef8d22, -233px 112px #feff28, -24px -5px #2bd8ff, -183px -25px #fc85e1;
+            }
+        }
+
+        @keyframes gravity {
+            to {
+                transform: translateY(200px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes position {
+            0%, 19.9% {
+                margin-top: 10%;
+                margin-left: 40%;
+            }
+            20%, 39.9% {
+                margin-top: 40%;
+                margin-left: 30%;
+            }
+            40%, 59.9% {
+                margin-top: 20%;
+                margin-left: 70%;
+            }
+            60%, 79.9% {
+                margin-top: 30%;
+                margin-left: 20%;
+            }
+            80%, 99.9% {
+                margin-top: 30%;
+                margin-left: 80%;
+            }
+        }
+
+        /* Card Container Styles */
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 10px;
+            
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+
+        .col-sm-10 {
+            width: 85.333333%;
+        }
+
+        .col-md-10 {
+            width: 85.333333%;
+        }
+
+        .mauto {
+            margin: auto;
+        }
+
+        /* Image Container Styles */
+        .img-container {
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            width: 100%;
+            margin: auto;
+            padding-top: 50px;
+            padding-left: 5px;
+            padding:5px 0px ;
+            border: 10px solid #ffffff;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            
+        }
+
+        .imgset {
+    position: relative;
+    z-index: 10;
+    margin-bottom: -230px; /* Increased from -210px to accommodate taller image */
+    display: flex;
+}
+
+        .imgset img {
+    width: auto; /* Change from 90% */
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover; /* Change from cover to show full image */
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+        /* Card Styles */
+        .card {
+            border: 0;
+            z-index: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .progress-wrapper {
+            height: 240px;
+            border-radius: 10px;
+            position: relative;     
+        }
+
+        .wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid red;
+            bottom: 500px;
+
+        }
+
+        .wave::before, .wave::after {
+            content: "";
+            position: absolute;
+            width: 950px;
+            height: 900px;
+            top: -100%;
+            left: 50%;
+            background-color: rgba(255, 255, 255, .4);
+            border-radius: 45%;
+            transform: translateX(-50%) rotate(0);
+            animation: rotate 6s linear infinite;
+            z-index: 9;
+            
+        }
+
+        .wave::after {
+            border-radius: 47%;
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateX(-50%) rotate(0);
+            animation: rotate 10s linear -5s infinite;
+            z-index: ;
+           
+        }
+
+        @keyframes rotate {
+            50% {
+                transform: translateX(-50%) rotate(180deg);
+            }
+            100% {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        /* Testimonial Slide Styles */
+        .content-wrapper {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .swiper-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #eee;
+            margin: 0 auto 20px;
+            background-image: url('https://randomuser.me/api/portraits/women/44.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .cite {
+            font-weight: bold;
+            color: #9612eb;
+            font-style: italic;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .img-container {
+                width: 95%;
+                z-index: 10;
+            }
+            
+            .imgset img {
+                width: 90%;
+                z-index: 10;
+            }
+            
+            .content-wrapper {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .wrapper {
+                padding: 0.5rem;
+            }
+            
+            .img-container {
+                width: 100%;
+                padding-top: 30px;
+                z-index: 10;
+            }
+            
+            .progress-wrapper {
+                height: 280px;
+            }
+        }
